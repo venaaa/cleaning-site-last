@@ -1,15 +1,160 @@
-$color-main: green;
-$color-secondary: blue;
-$color-third: purple;
+@import 'normalize.css';
 
-body {
-    background-color: $color-main;
+//=== Mixins ====
+
+@mixin font-roboto {
+    font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-    color: $color-secondary;
+@mixin font-montserrat {
+    font-family: 'Montserrat', sans-serif;
 }
 
-h2 {
-    color: $color-third;
+//=== / Mixins ===
+
+//=== Variables ===
+
+$aqua-text: #07969a;
+
+//=== / Variables ===
+
+//=== Common ===
+* {
+    box-sizing: border-box;
 }
+
+//=== / Common ===
+
+// === NAVBAR ===
+.navbar {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+nav img {
+    width: auto;
+    height: auto;
+}
+
+nav a {
+    @include font-montserrat;
+
+    font-size: 12pt;
+    font-weight: 500;
+    line-height: 24pt;
+    color: black;
+}
+
+nav a:hover {
+    color: $aqua-text;
+    text-decoration: none;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: #000;
+}
+
+.numbers a {
+    @include font-montserrat;
+    font-size: 17px;
+    font-weight: 700;
+    color: #000;
+}
+
+// === / NAVBAR ===
+
+// === CALCULATOR ===
+
+.section-calculator {
+    .section-inner {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    &-wrapper {
+        &__calc-panel {
+            height: 230px;
+            border: 2px solid $aqua-text;
+            border-radius: 10px;
+        }
+
+        &__steps {
+            margin: 20px 20px;
+            font-size: 14px;
+        }
+
+        &__tabs {
+            display: flex;
+
+            .tab {
+                width: 150px;
+                padding: 5px 0;
+                margin-left: 20px;
+                font-weight: 700;
+                color: #000;
+                text-align: center;
+                cursor: pointer;
+                border: 2px solid $aqua-text;
+                border-radius: 8px;
+            }
+
+            .tab:hover {
+                color: #fff;
+                background-color: $aqua-text;
+            }
+        }
+    }
+}
+
+// === / CALCULATOR ===
+
+// === ABOUT ===
+
+.section-about {
+    .section-inner {
+        padding: 40px 0;
+        color: #fff;
+        background-color: #07969a;
+    }
+
+    &-wrapper {
+        &__title {
+            margin-bottom: 30px;
+            font-size: 30px;
+            font-weight: 700;
+
+            .desc-line {
+                width: 70px;
+                height: 4px;
+                margin-top: 5px;
+                margin-left: 0;
+                background: #fff;
+                border: 0;
+            }
+        }
+
+        &__description {
+            margin-bottom: 40px;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 1.2em;
+        }
+
+        &-desc {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            text-align: center;
+
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+// === / ABOUT ===
