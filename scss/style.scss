@@ -1,0 +1,15 @@
+$color-main: green;
+$color-secondary: blue;
+$color-third: purple;
+
+body {
+    background-color: $color-main;
+}
+
+h1 {
+    color: $color-secondary;
+}
+
+h2 {
+    color: $color-third;
+}
