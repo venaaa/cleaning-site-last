@@ -148,7 +148,7 @@ nav a:hover {
 
 .section-about {
     .section-inner {
-        @include font-montserrat;
+        @include font-roboto;
 
         padding: 40px 0;
         color: #fff;
@@ -163,7 +163,6 @@ nav a:hover {
 
     &-wrapper {
         &__title {
-            color: #fff;
             font-size: 30px;
             font-weight: 700;
             background: $red-bg;
@@ -185,7 +184,7 @@ nav a:hover {
             font-size: 17px;
             font-weight: 500;
             line-height: 1.2em;
-            color: #333;
+            color: #000;
         }
 
         &-desc {
@@ -194,6 +193,9 @@ nav a:hover {
             font-weight: 500;
             text-align: center;
             color: #000;
+            text-decoration: underline;
+            text-decoration-color: $dark-blue;
+            text-decoration-thickness: 0.1rem;
 
             span {
                 font-weight: 700;
@@ -207,36 +209,24 @@ nav a:hover {
 // === SERVICES ===
 
 .section-services {
-    .section-inner{
-
-        .border {
-            margin-top: 80px;
-            width: 70%;
-            background: #ddd;
-        }
-    }
-
     &-wrapper {
         &__title {
+            margin-top: 40px;
+            margin-bottom: 40px;
             font-size: 30px;
             font-weight: 700;
-            color: #fff;
-            background: $red-bg;
-            display: inline;
-            box-shadow: 20px 0 0 $red-bg,-20px 0 0 $red-bg;
 
             .title-line {
                 width: 75px;
                 height: 4px;
                 margin-top: 5px;
                 margin-left: 0;
-                background: $red-bg;
+                background: $aqua-text;
                 border: 0;
             }
         }
 
         &__blocks {
-            margin-top: 40px;
             margin-bottom: 20px;
 
             &-line {
@@ -248,7 +238,7 @@ nav a:hover {
 
                     .title {
                         font-size: 18px;
-                        font-weight: 700;
+                        font-weight: 500;
                         text-align: center;
                     }
 
@@ -626,14 +616,14 @@ nav a:hover {
                 text-align: center;
             }
 
-            // .btn {
-            //     background-color: $red-bg;
-            //     color: #fff;
-            // }
+            .btn {
+                background-color: $red-bg;
+                color: #fff;
+            }
 
-            // .btn:hover {
-            //     background-color: $red-bg-dark;
-            // }
+            .btn:hover {
+                background-color: $red-bg-dark;
+            }
 
             &__desc {
                 margin-top: 5px;
