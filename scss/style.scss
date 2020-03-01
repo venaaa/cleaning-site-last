@@ -32,6 +32,11 @@ $red-bg-dark: #920010;
 // КНОПКА ВВЕРХ
 
 .btn-top {
+    img {
+        height: 50px;
+        width: 50px;
+    }
+
     display: none;
     position: fixed;
     bottom: 20px;
@@ -39,15 +44,9 @@ $red-bg-dark: #920010;
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #2ecc71;
-    color: #fff;
     cursor: pointer;
-    padding: 15px 40px;
-    border-radius: 10px;
-}
-
-.btn-top:hover {
-    background-color: #27ae60;
+    // padding: 15px 15px;
+    border-radius: 50%;
 }
 
 // / КНОПКА ВВЕРХ
@@ -103,40 +102,49 @@ nav a:hover {
 
 .section-calculator {
     .section-inner {
+        @include font-roboto;
+
         margin-top: 40px;
         margin-bottom: 40px;
     }
 
     &-wrapper {
-        &__calc-panel {
-            height: 230px;
-            border: 2px solid $aqua-text;
-            border-radius: 10px;
+        .calc_button {
+            margin-top: 40px;
+            margin-bottom: 50px;
         }
 
-        &__steps {
-            margin: 20px 20px;
-            font-size: 14px;
+        .calc_link {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            background: #0038a5;
+            border-radius: 5px;
         }
 
-        &__tabs {
-            display: flex;
+        .calc_link:hover {
+            background: #191970;
+            color: #fff;
+            text-decoration: none;
+        }
 
-            .tab {
-                width: 150px;
-                padding: 5px 0;
-                margin-left: 20px;
-                font-weight: 700;
-                color: #000;
+        &__main {
+            h2 {
                 text-align: center;
-                cursor: pointer;
-                border: 2px solid $aqua-text;
-                border-radius: 8px;
+                margin-bottom: 30px;
             }
 
-            .tab:hover {
-                color: #fff;
-                background-color: $aqua-text;
+            margin-top: 40px;
+            border: 5px solid #aeaeae;
+            border-radius: 8px;
+            padding: 20px 20px;
+
+            #final_price {
+                font-size: 40px;
+                font-weight: 700;
             }
         }
     }
@@ -235,52 +243,170 @@ nav a:hover {
             }
         }
 
-        &__blocks {
-            margin-top: 40px;
-            margin-bottom: 20px;
+    }
+}
 
-            &-line {
-                margin-bottom: 20px;
+// === / SERVICES ===
 
-                .block {
-                    border: 5px solid $aqua-text;
-                    border-radius: 8px;
+// === WHAT IS ===
 
-                    .title {
-                        font-size: 18px;
-                        font-weight: 700;
-                        text-align: center;
-                    }
+.section-whatis {
+    .section-inner {
+        @include font-montserrat;
+        margin-top: 50px;
 
-                    button {
-                        padding: 5px 50px;
-                        margin: 10px 40px;
-                    }
+        .border {
+            margin-top: 80px;
+            width: 70%;
+            background: #ddd;
+        }
+    }
 
-                    .btn {
-                        background: $aqua-text;
-                        color: #fff;
-                        text-decoration: none;
-                    }
+    &-wrapper {
+        &__title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #fff;
+            background: $red-bg;
+            display: inline;
+            box-shadow: 20px 0 0 $red-bg,-20px 0 0 $red-bg;
 
-                    .btn:hover {
-                        background: $dark-blue;
-                        color: #fff;
-                        text-decoration: none;
-                    }
+            .title-line {
+                width: 20%;
+                height: 4px;
+                margin-top: 5px;
+                margin-left: 0;
+                background: $red-bg;
+                border: 0;
+            }
+        }
+
+        &__main-left {
+            &-block {
+                margin-top: 20px;
+
+                img {
+                    height: 75px;
+                    width: auto;
+                }
+
+                &_title {
+                    margin-bottom: 10px;
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #000;
+                }
+
+                &_desc {
+                    font-size: 14px;
+                    font-weight: 500;
+
+                }
+            }
+        }
+        &__main-right {
+            margin-top: 170px;
+            img {
+                height: 400px;
+                width: auto;
+            }
+        }
+    }
+}
+
+// === / WHAT IS ===
+
+// === FORGOT ===
+
+.section-forgot {
+    .section-inner {
+        margin-top: 50px;
+
+        .border {
+            margin-top: 80px;
+            width: 70%;
+            background: #ddd;
+        }
+    }
+
+    &-wrapper {
+        &__title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #fff;
+            background: $red-bg;
+            display: inline;
+            box-shadow: 20px 0 0 $red-bg,-20px 0 0 $red-bg;
+
+            .title-line {
+                width: 30%;
+                height: 4px;
+                margin-top: 5px;
+                margin-left: 0;
+                background: $red-bg;
+                border: 0;
+            }
+        }
+
+        &__main-left {
+            margin-top: 90px;
+            img {
+                height: 400px;
+                width: auto;
+            }
+        }
+
+        &__subtitle {
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 700;
+
+            // .subtitle-line {
+            //     width: 140px;
+            //     height: 4px;
+            //     margin-top: 5px;
+            //     margin-left: 0;
+            //     background: $aqua-text;
+            //     border: 0;
+            // }
+        }
+
+        &__main-right {
+            padding: 20px 40px;
+            border: 4px solid $aqua-text;
+            border-radius: 8px;
+            &-block {
+                text-align: center;
+                &_title {
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: #000;
+                }
+
+                &_desc {
+                    font-size: 16px;
+                    font-weight: 500;
+
                 }
             }
         }
     }
 }
 
-// === / SERVICES ===
+// === / FORGOT ===
 
 // === CLEANING ===
 
 .section-cleaning {
     .section-inner {
         margin-top: 50px;
+
+        .border {
+            margin-top: 80px;
+            width: 70%;
+            background: #ddd;
+        }
     }
 
     &-wrapper {
@@ -341,15 +467,25 @@ nav a:hover {
 // === BENEFITS ===
 
 .section-benefits {
+    .section-inner {
+        @include font-montserrat;
+        .border {
+            margin-top: 80px;
+            width: 70%;
+            background: #ddd;
+        }
+    }
     &-wrapper {
         &__title {
-            margin-top: 40px;
-            margin-bottom: 40px;
+            color: #fff;
             font-size: 30px;
             font-weight: 700;
+            background: $red-bg;
+            display: inline;
+            box-shadow: 20px 0 0 $red-bg,-20px 0 0 $red-bg;
 
             .title-line {
-                width: 75px;
+                width: 30%;
                 height: 4px;
                 margin-top: 5px;
                 margin-left: 0;
@@ -366,6 +502,7 @@ nav a:hover {
                 margin-top: 40px;
 
                 .title {
+                    color: #000;
                     margin-top: 20px;
                     font-size: 22px;
                     font-weight: 700;
@@ -374,6 +511,7 @@ nav a:hover {
                 }
 
                 .description {
+                    color: #000;
                     margin-top: 20px;
                     font-size: 14px;
                     font-weight: 500;
@@ -447,15 +585,24 @@ nav a:hover {
 // === REVIEW ===
 
 .section-review {
+    .section-inner {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        .border {
+            margin-top: 80px;
+            width: 70%;
+            background: #ddd;
+        }
+    }
+
     &-wrapper {
         &__title {
-            margin-top: 40px;
-            margin-bottom: 40px;
+            color: #000;
             font-size: 30px;
             font-weight: 700;
 
             .title-line {
-                width: 75px;
+                width: 32%;
                 height: 4px;
                 margin-top: 5px;
                 margin-left: 0;
@@ -465,6 +612,7 @@ nav a:hover {
         }
 
         &__carousel-blocks {
+            margin-top: 50px;
             .block {
                 padding: 20px 20px;
                 border: 3px solid $red-bg;
@@ -490,6 +638,57 @@ nav a:hover {
 }
 
 // === / REVIEW ===
+
+// DISTRICKTS
+
+.section-districkts {
+    .section-inner {
+        @include font-roboto;
+
+        .border {
+            margin-top: 80px;
+            width: 70%;
+            background: #ddd;
+        }
+    }
+    &-wrapper {
+        &__title {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-size: 30px;
+            font-weight: 700;
+
+            .title-line {
+                width: 100%;
+                height: 4px;
+                margin-top: 5px;
+                margin-left: 0;
+                background: $red-bg;
+                border: 0;
+            }
+        }
+
+        &__blocks {
+            margin-bottom: 20px;
+
+            .block {
+                padding: 0 15px;
+                margin-top: 40px;
+
+                .title {
+                    margin-bottom: 10px;
+                    font-size: 22px;
+                    font-weight: 700;
+                    line-height: 1em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+// / DISTRICKTS
 
 // === ANSWERS ===
 

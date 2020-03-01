@@ -20,7 +20,9 @@
 <body>
     <!-- КНОПКА "ВВЕРХ" -->
 
-    <button class="btn-top" title="Go to top">Вверх</button> 
+    <!-- <button class="btn-top" title="Go to top">Вверх</button> -->
+    <!-- <button class="btn-top" title="Go to top">Вверх</button> -->
+    <div class="btn-top"><img src="img/up-arrow.png" alt=""></div>
 
     <!-- Navbar -->
 
@@ -108,24 +110,44 @@
             <div class="section-calculator-container container">
                 <div class="section-calculator-wrapper">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-12 offset-lg-3">
-                            <div class="section-calculator-wrapper__calc-panel">
-                                <div class="section-calculator-wrapper__steps">
-                                    <span class="one">Шаг 1 -></span>
-                                    <span class="one">Шаг 2 -></span>
-                                    <span class="one">Шаг 3</span>
-                                </div>
-                                <div class="section-calculator-wrapper__tabs">
-                                    <div class="tab active">Квартиры</div>
-                                    <div class="tab">Коттеджи</div>
-                                    <div class="tab">Окна</div>
-                                </div>
-                                <div class="section-calculator-wrapper__tab-content">
-                                    <div class="cont">
-                                        Lorem, ipsum dolor.
-                                    </div>
-                                    <div class="cont"></div>
-                                    <div class="cont"></div>
+                        <div class="col-lg-6 offset-lg-3 col-12">
+                            <div class="calc_button text-center">
+                                <a href="#" class="hider_calc calc_link">Рассчет стоимости</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc_end" id="hidden" style="display: none;">
+                        <div class="row">
+                            <div class="col-lg-4 offset-lg-4 col-12">
+                                <div class="section-calculator-wrapper__main" id="calc">
+                                    <h2>Рассчет стоимости уборки</h2>
+                                    <label for="metres">Введите площадь м²</label>
+                                    <input type="text" class="form-control" id="metres" placeholder="м²" value='0'> <br>
+                                    <label for="clean_type">Выберите тип уборки</label>
+                                    <select name="type" id="clean_type" class="form-control">
+                                        <option data-clean-ratio="0" value="Нет">Нет</option>
+                                        <option data-clean-ratio="1500" value="Поддерживающая уборка">Поддерживающая уборка</option>
+                                        <option data-clean-ratio="4500" value="Генеральная уборка">Генеральная уборка</option>
+                                        <option data-clean-ratio="6000" value="Послестроительная уборка">Послестроительная уборка</option>
+                                    </select> <br>
+                                    <label for="work_place">Выберите где мы будем работать</label>
+                                    <select name="work_place" id="work_place" class="form-control">
+                                        <option data-place-ratio="1500" value="Квартира">Квартира</option>
+                                        <option data-place-ratio="3000" value="Коттедж">Коттедж</option>
+                                    </select> <br>
+                                    <label for="windows">Мытьё окон</label>
+                                    <select name="windows" id="windows" class="form-control">
+                                        <option data-windows-ratio="0" value="Без мытья окон">Без мытья окон</option>
+                                        <option data-windows-ratio="350" value="Мытьё окон с одной стороны">Мытьё окон с одной стороны</option>
+                                        <option data-windows-ratio="700" value="Мытьё окон с двух сторон">Мытьё окон с двух сторон</option>
+                                    </select> <br>
+                                    <small>Приблизительная</small>
+                                    <h4>Стоимость уборки</h4>
+                                    <p class="price">
+                                        <span id="final_price">0</span>
+                                        Руб.
+                                    </p>
+                                    <button id="btn-raschet" class="btn btn-block btn-primary">Рассчитать</button>
                                 </div>
                             </div>
                         </div>
@@ -209,120 +231,302 @@
                         Наши услуги
                         <hr class="title-line">
                     </div>
-                    <div class="section-services-wrapper__blocks">
-                        <div class="section-services-wrapper__blocks-line">
-                            <div class="row text-center">
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="block">
-                                        <div class="title">
-                                            Генеральная уборка
-                                        </div>
-                                        <img src="img/Smith.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="block">
-                                        <div class="title">
-                                            Генеральная уборка
-                                        </div>
-                                        <img src="img/Spidey.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="block">
-                                        <div class="title">
-                                            Генеральная уборка
-                                        </div>
-                                        <img src="img/Kitty.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="block">
-                                        <div class="title">
-                                            Генеральная уборка
-                                        </div>
-                                        <img src="img/Batman.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="section-services-wrapper__table">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Виды уборки</th>
+                                            <th scope="col">Цена от</th>
+                                            <th scope="col">Ед. изм.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Генеральная уборка</td>
+                                            <td>100 руб.</td>
+                                            <td>м²</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Уборка после ремонта</td>
+                                            <td>200 руб.</td>
+                                            <td>м²</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Регулярная уборка</td>
+                                            <td>5500 руб.</td>
+                                            <td>шт</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>Уборка после ЧП</td>
+                                            <td>250 руб.</td>
+                                            <td>м²</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                            <td>Уборка после пожара</td>
+                                            <td>250 руб.</td>
+                                            <td>м²</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">6</th>
+                                            <td>Уборка снега крыши</td>
+                                            <td>100 руб.</td>
+                                            <td>м²</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7</th>
+                                            <td>Дезинфекция</td>
+                                            <td>100 руб.</td>
+                                            <td>м²</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-                        <!-- SECOND LINE -->
-
-                        <div class="section-services-wrapper__blocks-line">
-                            <div class="row text-center">
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="block">
-                                        <div class="title">
-                                            Генеральная уборка
-                                        </div>
-                                        <img src="img/Method.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
-                                    </div>
+                                <div class="table_button text-center">
+                                    <a href="#" class="hider_table table_link btn btn-outline-success">Открыть полный список</a>
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="block">
-                                        <div class="title">
-                                            Генеральная уборка
-                                        </div>
-                                        <img src="img/Serious.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="block">
-                                        <div class="title">
-                                            Генеральная уборка
-                                        </div>
-                                        <img src="img/Spidey.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="block">
-                                        <div class="title">
-                                            Генеральная уборка
-                                        </div>
-                                        <img src="img/Smith.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- THIRD LINE -->
-
-                        <div class="section-services-wrapper__blocks-line">
-                            <div class="row text-center">
-                                <div class="col-lg-3 col-md-6 col-12 offset-lg-1">
-                                    <div class="block text-center">
-                                        <div class="title">
-                                            Генеральная уборка
-                                        </div>
-                                        <img src="img/Batman.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="block text-center">
-                                        <div class="title">
-                                            Мытье и дезинфекция
-                                        </div>
-                                        <img src="img/Serious.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="block text-center">
-                                        <div class="title">
-                                            Генеральная уборка
-                                        </div>
-                                        <img src="img/Kitty.png" alt="">
-                                        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalCenter">PURCHE</button>
+                                <div class="table_end" id="hidden_tabl" style="display: none; margin-bottom: 10px;">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Варианты мойки</th>
+                                                <th scope="col">Цена от</th>
+                                                <th scope="col">Ед. изм.</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Мойка окон</td>
+                                                <td>250 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Мойка брусчатки</td>
+                                                <td>10000 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Мойка фасада</td>
+                                                <td>80 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td>Мойка террасы и декинга</td>
+                                                <td>250 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5</th>
+                                                <td>Мойка люстр</td>
+                                                <td>3500 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">6</th>
+                                                <td>Мойка камина</td>
+                                                <td>2000 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                    
+                                            <!-- ХИМЧИСТКА -->
+                                    
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Химчистка</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Химчистка штор</td>
+                                                <td>250 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Химчистка тюли</td>
+                                                <td>150 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Обеспылевание штор</td>
+                                                <td>75 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td>Снятие и навеска штор</td>
+                                                <td>30 руб.</td>
+                                                <td>м</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5</th>
+                                                <td>Химчистка ковра</td>
+                                                <td>200 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">6</th>
+                                                <td>Химчистка ковролина</td>
+                                                <td>80 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">7</th>
+                                                <td>Химчистка дивана</td>
+                                                <td>1000 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">8</th>
+                                                <td>Химчистка кресла</td>
+                                                <td>750 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9</th>
+                                                <td>Химчистка бильярдного стола</td>
+                                                <td>4500 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                    
+                                            <!-- ДОПОЛНИТЕЛЬНЫЕ РОБОТЫ -->
+                                    
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Дополнительные работы</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Мытье духового шкафа/гриля/вытяжки</td>
+                                                <td>1000 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Мытье микроволновой печи</td>
+                                                <td>500 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Мытье холодильника</td>
+                                                <td>1000 руб.</td>
+                                                <td>м.кв</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td>Мытье отопительных труб</td>
+                                                <td>500 руб.</td>
+                                                <td>м.кв</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5</th>
+                                                <td>Мытье посудомоечной машины изнутри</td>
+                                                <td>500 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">6</th>
+                                                <td>Мытье посуды</td>
+                                                <td>500 руб.</td>
+                                                <td>30мин</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">7</th>
+                                                <td>Мытье радиаторов батареи</td>
+                                                <td>500 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">8</th>
+                                                <td>Протирка потолочных светильников</td>
+                                                <td>500 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9</th>
+                                                <td>Мытье пола специализированной техникой</td>
+                                                <td>500 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">10</th>
+                                                <td>Почасовая работа сотрудника</td>
+                                                <td>500 руб.</td>
+                                                <td>1ч</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">11</th>
+                                                <td>Доставка, монтаж/демонтаж туры</td>
+                                                <td>7500 руб.</td>
+                                                <td>раб/день</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">12</th>
+                                                <td>Глажка</td>
+                                                <td>500 руб.</td>
+                                                <td>30мин</td>
+                                            </tr>
+                                    
+                                            <!-- Гидрофобизация -->
+                                    
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Гидрофобизация</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Гидрофобизация камня</td>
+                                                <td>150 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Гидрофобизация стекла</td>
+                                                <td>2500 руб.</td>
+                                                <td>шт</td>
+                                            </tr>
+                                    
+                                            <!-- Виды полировки -->
+                                    
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Виды полировки</th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Полировка камня</td>
+                                                <td>1200 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Полировка столешницы</td>
+                                                <td>1500 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Полировка стекла</td>
+                                                <td>2000 руб.</td>
+                                                <td>м²</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="table_button text-center">
+                                        <a href="#" class="hider_table table_link">Закрыть список</a>
                                     </div>
                                 </div>
                             </div>
@@ -335,6 +539,145 @@
     </section>
 
     <!-- / SERVICES -->
+
+    <!-- WHAT IS -->
+
+    <section class="section-outer section-whatis">
+        <div class="section-inner">
+            <div class="section-whatis-container container">
+                <div class="section-whatis-wrapper">
+                    <div class="section-whatis-wrapper__title">
+                        Наша уборка
+                        <hr class="title-line">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="section-whatis-wrapper__main-left">
+                                <div class="section-whatis-wrapper__main-left-block text-center">
+                                    <img src="img/house.png" alt="" class="img-fluid">
+                                    <div class="section-whatis-wrapper__main-left-block_title">
+                                        vip-уборка
+                                    </div>
+                                    <div class="section-whatis-wrapper__main-left-block_desc">
+                                        Специализируемся на уборке VIP-недвижимости — знаем, как идеально 
+                                        убрать коттедж с дорогой внутренней отделкой и ничего не испортить.
+                                    </div>
+                                </div>
+                                <div class="section-whatis-wrapper__main-left-block text-center">
+                                    <img src="img/woman.png" alt="" class="img-fluid">
+                                    <div class="section-whatis-wrapper__main-left-block_title">
+                                        лучшие сотрудники
+                                    </div>
+                                    <div class="section-whatis-wrapper__main-left-block_desc">
+                                        Отбираем сотрудников на конкурсной основе и обучаем их — каждый клинер 
+                                        сдает сложный экзамен, прежде чем получить доступ к работе.
+                                    </div>
+                                </div>
+                                <div class="section-whatis-wrapper__main-left-block text-center">
+                                    <img src="img/payment-method.png" alt="" class="img-fluid">
+                                    <div class="section-whatis-wrapper__main-left-block_title">
+                                        отличные цены
+                                    </div>
+                                    <div class="section-whatis-wrapper__main-left-block_desc">
+                                        Предлагаем адекватные цены — стоимость каждой услуги обоснована трудозатратами, 
+                                        объемами использования моющих средств и оборудования.
+                                    </div>
+                                </div>
+                                <div class="section-whatis-wrapper__main-left-block text-center">
+                                    <img src="img/vacuum-cleaner.png" alt="" class="img-fluid">
+                                    <div class="section-whatis-wrapper__main-left-block_title">
+                                        лучшее оборудование
+                                    </div>
+                                    <div class="section-whatis-wrapper__main-left-block_desc">
+                                        Тратим солидные суммы на оборудование и средства уборки — закупаем
+                                        самое лучшее, что есть на рынке, вне зависимости от цены.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 offset-lg-1 col-12">
+                            <div class="section-whatis-wrapper__main-right">
+                                <img class="img-thumbnail" src="img/fasad1.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="border">
+        </div>
+    </section>
+
+    <!-- / WHAT IS -->
+
+    <!-- FORGOT -->
+
+    <section class="section-outer section-forgot">
+        <div class="section-inner">
+            <div class="section-forgot-container container">
+                <div class="section-forgot-wrapper">
+                    <div class="section-forgot-wrapper__title">
+                        Уберем все аккуратно
+                        <hr class="title-line">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 col-12">
+                            <div class="section-forgot-wrapper__main-left">
+                                <img class="img-thumbnail img-fluid" src="img/fasad2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 offset-lg-1 col-12">
+                            <div class="section-forgot-wrapper__subtitle">
+                                Забудьте про:
+                            </div>
+                            <div class="section-forgot-wrapper__main-right">
+                                <div class="section-forgot-wrapper__main-right-block">
+                                    <div class="section-forgot-wrapper__main-right-block_title">
+                                        Царапины и потертости
+                                    </div>
+                                    <div class="section-forgot-wrapper__main-right-block_desc">
+                                        Их не будет на мраморном полу, паркете, дорогой столешнице или стекле.
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="section-forgot-wrapper__main-right-block">
+                                    <div class="section-forgot-wrapper__main-right-block_title">
+                                        Пропавшие вещи
+                                    </div>
+                                    <div class="section-forgot-wrapper__main-right-block_desc">
+                                        Мы тщательно подбираем персонал и каждый наш сотрудник обязан пройти 
+                                        детектор лжи по первому Вашему требованию.
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="section-forgot-wrapper__main-right-block">
+                                    <div class="section-forgot-wrapper__main-right-block_title">
+                                        Срыв сроков
+                                    </div>
+                                    <div class="section-forgot-wrapper__main-right-block_desc">
+                                        У нас достаточно сотрудников, что бы убрать ваш коттедж вовремя, даже 
+                                        в высокий сезон с большим количеством заказов.
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="section-forgot-wrapper__main-right-block">
+                                    <div class="section-forgot-wrapper__main-right-block_title">
+                                        Бесконечная уборка
+                                    </div>
+                                    <div class="section-forgot-wrapper__main-right-block_desc">
+                                        Заранее согласуем день и длительность работ. Сделаем все быстро, 
+                                        чтобы не мешать вам и вашим близким.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="border">
+        </div>
+    </section>
+
+    <!-- / FORGOT -->
 
     <!-- CLEANING -->
 
@@ -370,6 +713,7 @@
                     </div>
                 </div>
             </div>
+            <hr class="border">
         </div>
     </section>
 
@@ -635,6 +979,7 @@
                     </div>
                 </div>
             </div>
+            <hr class="border">
         </div>
     </section>
 
@@ -647,58 +992,67 @@
             <div class="section-benefits-container container">
                 <div class="section-benefits-wrapper">
                     <div class="section-benefits-wrapper__title">
-                        Наши преимущества
+                        Наше оборудование
                         <hr class="title-line">
                         <div class="section-benefits-wrapper__blocks">
                             <div class="row text-center">
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="block">
-                                        <img src="img/recommended.png" alt="">
-                                        <div class="title">VIP-Уборка</div>
+                                        <img src="img/ultimate.png" alt="">
+                                        <div class="title">The Ultimate</div>
                                         <div class="description">
-                                            Специализируемся на уборке vip-недвижимости - знаем, 
-                                            как идеально убрать коттедж с дорогой внутренней 
-                                            отделкой и ничего не испортить. 
+                                            Экстрактор для чистки штор, аналогов которого не существует. 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="block">
-                                        <img src="img/woom.png" alt="">
-                                        <div class="title">Квалифицированные сотрудники</div>
+                                        <img src="img/fimap.png" alt="">
+                                        <div class="title">Fimap</div>
                                         <div class="description">
-                                            Отбираем сотрудников на конкурсной основе и обучаем 
-                                            их - каждый клинер сдает сложный экзамен, прежде чем 
-                                            получить допуск к работе. 
+                                            Уникальные высокотехнологичные пылесосы для тщательной 
+                                            уборки в труднодоступных местах. 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="block">
-                                        <img src="img/credit-card.png" alt="">
-                                        <div class="title">Адекватные цены</div>
+                                        <img src="img/lcd.png" alt="">
+                                        <div class="title">7000 LCD</div>
                                         <div class="description">
-                                            Стоимость каждой услуги обоснована трудозатратами, 
-                                            объемами использования моющих средств и оборудования. 
+                                            Озон уничтожает все известные микроорганизмы: вирусы, бактерии, грибки, 
+                                            водоросли, их споры, цисты простейших т.д.
+                                            Не существует и не может возникнуть устойчивых к озону форм микробов.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 offset-lg-1 col-md-4 col-12">
+                                <div class="col-lg-4 col-md-4 col-12">
                                     <div class="block">
-                                        <img src="img/cleaner.png" alt="">
-                                        <div class="title">Современное оборудование</div>
+                                        <img src="img/ep430.png" alt="">
+                                        <div class="title">EP 430</div>
                                         <div class="description">
-                                            Отбираем сотрудников на конкурсной основе и обучаем 
-                                            их - каждый клинер сдает сложный экзамен, прежде чем получить допуск к работе.
+                                            Однодисковая роторная машина для размывки твердых полов, шлифовки мрамора, 
+                                            гранита, химчистки ковролина и др.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 offset-lg-2 col-md-4 col-12">
+                                <div class="col-lg-4 col-md-4 col-12">
                                     <div class="block">
-                                        <img src="img/speed.png" alt="">
-                                        <div class="title">Скорость и оперативность</div>
+                                        <img src="img/emilio.png" alt="">
+                                        <div class="title">Emilio RA Plus</div>
                                         <div class="description">
-                                            Работаем быстро и качественно
+                                            Мощный профессиональный парогенератор для решения любой задачи 
+                                            по удалению пятен и грязи из труднодоступных мест, а также 
+                                            экохимчистки мебели и штор.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <div class="block">
+                                        <img src="img/santoemma.png" alt="">
+                                        <div class="title">Santoemma</div>
+                                        <div class="description">
+                                            Самое мощное оборудование в РФ для безупречной химчистки всех видов мягкой мебели.
                                         </div>
                                     </div>
                                 </div>
@@ -707,6 +1061,7 @@
                     </div>
                 </div>
             </div>
+            <hr class="border">
         </div>
     </section>
 
@@ -768,7 +1123,7 @@
                                                 <input type="text" class="form-control form-rounded" name="Имя" placeholder="Ваше имя" required>
                                             </div>
                                             <div class="col-6">
-                                                <input type="text" class="form-control form-rounded" name="Телефон" placeholder="Ваш телефон" required>
+                                                <input id="phone_clean_msk" type="text" class="form-control form-rounded" name="Телефон" placeholder="Ваш телефон" required>
                                             </div>
                                             <div class="col-6 offset-3">
                                                 <button class="form-btn btn btn-success form-rounded">Заказать уборку</button>
@@ -872,10 +1227,86 @@
                     </div>
                 </div>
             </div>
+            <hr class="border">
         </div>
     </section>
 
     <!-- / review -->
+
+    <!-- districkts -->
+    <section class="section-outer section-districkts">
+        <div class="section-inner">
+            <div class="section-districkts-container container">
+                <div class="section-districkts-wrapper">
+                    <div class="section-districkts-wrapper__title">
+                        Нам доверяют уборку коттеджей жители всех элитных поселков Подмосковья
+                        <hr class="title-line">
+                    </div>
+                    <div class="section-districkts-wrapper__blocks">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="block">
+                                    <div class="title">Барвиха</div>
+                                    <img src="img/barviha.jpg" alt="" class="img-thumbnail">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="block">
+                                    <div class="title">Шервуд</div>
+                                    <img src="img/sherwud.jpg" alt="" class="img-thumbnail">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="block">
+                                    <div class="title">Горки 10</div>
+                                    <img src="img/gorki10.jpg" alt="" class="img-thumbnail">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="block">
+                                    <div class="title">Гринфилд</div>
+                                    <img src="img/greenfield.jpg" alt="" class="img-thumbnail">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="block">
+                                    <div class="title">Монтевиль</div>
+                                    <img src="img/montevil.jpg" alt="" class="img-thumbnail">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="block">
+                                    <div class="title">Сады Майендорф</div>
+                                    <img src="img/sadimaiendorf.jpg" alt="" class="img-thumbnail">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="block">
+                                    <div class="title">Миллениум Парк</div>
+                                    <img src="img/milleniumpark.jpg" alt="" class="img-thumbnail">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="block">
+                                    <div class="title">Жуковка 21</div>
+                                    <img src="img/zhukovka21.jpg" alt="" class="img-thumbnail">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="block">
+                                    <div class="title">Княжье Озеро</div>
+                                    <img src="img/knyazheozero.jpg" alt="" class="img-thumbnail">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="border">
+        </div>
+    </section>
+
+    <!-- / districkts -->
 
     <!-- answers -->
 
@@ -1042,7 +1473,7 @@
                     <!-- END Hidden Required Fields -->
                 
                     <input class="form-control" type="text" name="Имя" placeholder="Ваше имя" required>
-                    <input class="form-control" type="text" name="Телефон" placeholder="Ваш телефон" required>
+                    <input id="phone_modal_msk" class="form-control" type="text" name="Телефон" placeholder="Ваш телефон" required>
                     <button class="form-control btn btn-outline-dark">Send</button>
 
                 </form>
@@ -1091,7 +1522,7 @@
                                     <!-- END Hidden Required Fields -->
                                 
                                     <input class="form-control" type="text" name="Имя" placeholder="Ваше имя" required>
-                                    <input class="form-control" type="text" name="Телефон" placeholder="Ваш телефон" required>
+                                    <input id="phone_msk" class="form-control" type="text" name="Телефон" placeholder="Ваш телефон" required>
                                     <button class="form-control btn btn-dark">Заказать уборку</button>
 
                                 </form>
@@ -1117,8 +1548,9 @@
     <script src="js/jquery-3.4.1.js"></script>
     <script src="libs/owlcarousel2/owl.carousel.min.js"></script>
     <script src="js/slider.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/portfolio.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/main.js"></script>
     <!-- / SCRIPTS -->
 </body>

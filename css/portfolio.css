@@ -1,15 +1,23 @@
-.portfolio .amenities__title {
-  margin-top: 40px;
-  font-size: 30px;
-  font-weight: 700; }
-
-.portfolio .amenities__title_line {
-  width: 75px;
-  height: 4px;
-  margin-top: 5px;
-  margin-left: 0;
-  background: #0038a5;
-  border: 0; }
+.portfolio {
+  margin-top: 40px; }
+  .portfolio .border {
+    margin-top: 80px;
+    width: 100%;
+    background: #ddd; }
+  .portfolio .amenities__title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    background: #0038a5;
+    display: inline;
+    box-shadow: 20px 0 0 #0038a5,-20px 0 0 #0038a5; }
+  .portfolio .amenities__title_line {
+    width: 20%;
+    height: 4px;
+    margin-top: 10px;
+    margin-left: 0;
+    background: #0038a5;
+    border: 0; }
 
 .portfolio__block,
 .portfolio__end {
